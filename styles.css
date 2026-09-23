@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+:root { --ink:#554629; --yellow:#f7c842; --deep:#e7a91f; --cream:#fff9e8; }
+* { box-sizing:border-box; }
+body { min-height:100vh; margin:0; display:grid; place-items:center; padding:28px 16px; color:var(--ink); background:radial-gradient(ellipse at 50% 15%,#fffdf5 0,#fff8e5 55%,#f8edce 100%); font-family:'DM Sans',sans-serif; overflow-x:hidden; }
+.card { width:min(100%,510px); min-height:650px; padding:42px 32px 28px; text-align:center; background:rgba(255,255,255,.72); border:1px solid rgba(231,169,31,.2); border-radius:28px; box-shadow:0 22px 70px rgba(111,83,25,.12); position:relative; z-index:1; }
+.eyebrow { color:#b68c38; letter-spacing:.22em; font-size:11px; font-weight:700; }
+h1 { margin:14px 0 8px; font:700 clamp(30px,7vw,40px) 'Playfair Display',serif; }
+h1 span { font-size:.72em; }
+.intro { margin:0; color:#857655; font-size:15px; }
+.bouquet { height:305px; width:290px; max-width:100%; margin:8px auto 0; position:relative; }
+.flower { position:absolute; width:76px; height:76px; z-index:3; animation:sway 3s ease-in-out infinite alternate; transform-origin:50% 90%; }
+.flower-one { left:40px; top:82px; transform:scale(.83); animation-delay:-1s; }
+.flower-two { left:107px; top:34px; transform:scale(1.05); }
+.flower-three { left:176px; top:91px; transform:scale(.9); animation-delay:-1.6s; }
+.flower i { position:absolute; left:29px; top:0; width:19px; height:39px; border-radius:50% 50% 42% 42%; background:linear-gradient(#ffe98b,#f5b927); transform-origin:9px 38px; box-shadow:0 2px 5px #e5a71e66; }
+.flower i:nth-child(2) { transform:rotate(72deg); }.flower i:nth-child(3) { transform:rotate(144deg); }.flower i:nth-child(4) { transform:rotate(216deg); }.flower i:nth-child(5) { transform:rotate(288deg); }
+.flower b { position:absolute; top:29px; left:29px; width:19px; height:19px; border-radius:50%; background:#8c5a2c; border:3px dotted #d3a550; }
+.stem { position:absolute; z-index:1; bottom:35px; width:8px; height:190px; left:140px; border-radius:10px; background:linear-gradient(90deg,#548345,#8eaf66,#47743c); transform-origin:top; }
+.stem-one { transform:rotate(22deg); height:178px; }.stem-two { transform:rotate(1deg); height:206px; }.stem-three { transform:rotate(-23deg); height:173px; }
+.leaf { position:absolute; z-index:2; width:38px; height:18px; background:#6e9a55; border-radius:100% 0 100% 0; bottom:111px; left:91px; transform:rotate(18deg); }
+.leaf-two { left:162px; bottom:142px; transform:scaleX(-1) rotate(20deg); }
+.wrap { position:absolute; z-index:4; left:78px; bottom:5px; width:135px; height:112px; background:linear-gradient(120deg,#f6d88b,#ffe9b4 50%,#eac46e); clip-path:polygon(12% 0,88% 0,100% 100%,0 100%); opacity:.96; }
+.ribbon { position:absolute; z-index:5; left:123px; bottom:42px; width:48px; height:13px; border-radius:4px; background:#d79640; transform:rotate(-8deg); }
+button { border:0; border-radius:999px; padding:15px 24px; background:#eab334; color:#fff; font:700 15px 'DM Sans',sans-serif; cursor:pointer; box-shadow:0 8px 18px #cc982b44; transition:transform .2s,background .2s; }
+button:hover { background:#d99f20; transform:translateY(-2px); } button:focus-visible { outline:3px solid #74571d; outline-offset:3px; }
+button span { margin-left:7px; }
+.note { max-width:380px; margin:20px auto 0; padding:17px 19px; border-radius:16px; background:#fff6dc; color:#6e5b36; font-size:14px; line-height:1.65; animation:appear .5s ease both; }
+.note p { margin:0; }.note .signoff { margin-top:9px; font-weight:700; color:#b17c1f; }
+.hint { margin:24px 0 0; color:#a29270; font-size:12px; }
+.sparkles { position:fixed; inset:12% 0 auto; text-align:center; color:#e9bd55; opacity:.5; font-size:25px; pointer-events:none; letter-spacing:1em; }
+@keyframes sway { from { rotate:-3deg; } to { rotate:4deg; } }
+@keyframes appear { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@media(max-width:430px) { .card { min-height:620px; padding:34px 20px 25px; }.bouquet { transform:scale(.91); transform-origin:top center; margin-bottom:-20px; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; } }
+.actions { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:10px; }
+button.music-button { padding:13px 18px; background:#fff5d9; color:#9b701f; box-shadow:none; border:1px solid #efdbab; }
+button.music-button:hover { background:#ffefc6; }
+.flower-message { min-height:20px; margin:11px 0 0; color:#b17c1f; font-size:13px; font-weight:600; }
+.flower { padding:0; border:0; border-radius:50%; background:transparent; box-shadow:none; cursor:pointer; }
+.flower:hover { background:transparent; box-shadow:none; }
+.flower:focus-visible { outline:3px solid #8e691f; outline-offset:5px; }
+.flower.bloom { animation:bloom .55s ease; }
+.petal { position:absolute; z-index:7; color:#efbd32; pointer-events:none; animation:petal-fall 1.1s ease-out forwards; }
+@keyframes bloom { 50% { scale:1.22; } }
+@keyframes petal-fall { from { opacity:1; transform:translate(0,0) rotate(0); } to { opacity:0; transform:translate(var(--drift),70px) rotate(180deg); } }
+.instruction { margin:10px 0; color:#9c762f; font-size:13px; font-weight:600; }

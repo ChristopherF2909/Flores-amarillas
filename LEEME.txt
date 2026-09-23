@@ -1,0 +1,16 @@
+PAGINA DE FLORES AMARILLAS - GUIA RAPIDA
+
+Archivos incluidos:
+- index.html: estructura y texto de la pagina.
+- styles.css: diseño, colores y animaciones.
+- script.js: musica e interacciones.
+
+PARA ABRIR EN VISUAL STUDIO CODE
+1. Descarga y descomprime flores-amarillas.zip.
+2. Abre Visual Studio Code.
+3. Selecciona Archivo > Abrir carpeta y elige la carpeta flores-amarillas.
+4. Para ver la pagina, abre index.html en el navegador (doble clic desde el Explorador de archivos).
+5. Para editar la dedicatoria, abre index.html y busca la frase dentro de <section id="note">. Guarda con Ctrl+S y actualiza el navegador.
+
+NOTA SOBRE LA MUSICA
+La pagina intenta iniciar la melodía al cargar. Algunos navegadores no permiten reproducir sonido hasta que la persona toca la pagina; en ese caso, basta con hacer un primer toque o usar el botón de música.
